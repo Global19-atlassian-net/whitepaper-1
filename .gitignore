@@ -1,0 +1,12 @@
+whitepaper.pdf
+
+.DS_Store
+
+# LaTeX intermediaries #
+########################
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.pdfsync
