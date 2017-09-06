@@ -33,42 +33,42 @@ $^{\text{\sf 3}}$Biozentrum, University of Basel, Basel, Switzerland.
 \editor{Associate Editor: XXXXXXX}
 
 \abstract{
-\textbf{Summary:} 
-Understanding the spread and evolution of viral pathogens is important for effective public health measures and surveillance. 
-Genomic epidemiology, aided by the often high rates of viral evolution and ability to rapidly disseminate around the world, improves our understanding of such diseases. 
-Nextstrain is a bioinformatics and visualisation platform which presents a real-time view into the evolution and spread of a range of viral pathogens of high human importance. 
-Nextstrain makes these results, representing our current understanding, publicly available for use by health professionals, epidemiologists, virologists and the public alike. 
+\textbf{Summary:}
+Understanding the spread and evolution of viral pathogens is important for effective public health measures and surveillance.
+Genomic epidemiology, aided by the often high rates of viral evolution and ability to rapidly disseminate around the world, improves our understanding of such diseases.
+Nextstrain is a bioinformatics and visualisation platform which presents a real-time view into the evolution and spread of a range of viral pathogens of high human importance.
+Nextstrain makes these results, representing our current understanding, publicly available for use by health professionals, epidemiologists, virologists and the public alike.
 \\
 \textbf{Availability and implementation:}
 All code (predominantly Javascript and Python) is freely available from https://github.com/blab/nextstrain and the web-application is available at www.nextstrain.org.
 \\
-\textbf{Contact:} 
+\textbf{Contact:}
 \href{jhadfiel@fredhutch.org}{jhadfiel@fredhutch.org}, \href{tbedford@fredhutch.org}{tbedford@fredhutch.org}, \href{richard.neher@tuebingen.mpg.de}{richard.neher@tuebingen.mpg.de}
 \\
 }
 
 \maketitle
 
-Viral pathogens pose an ongoing and ever present danger to human health on a worldwide scale, including epidemics such as the West-African Ebola epidemic and the ongoing Zika epidemic in the Americas, as well as ongoing disease spread such as seasonal influenza. 
-The rapid evolution of these viruses allows inference of the evolution and epidemiology of the disease from genomic data. 
-Such analysis are often done in isolation, and may lack the spatial or temporal context in which to best interpret the results, which impedes understanding \citep{Pybus:2013bj}.
-Furthermore, the results of analysis are often not made available to the public or health bodies until publication, which may be too late to effect change in policy or understanding. 
+Viral pathogens pose an ongoing and ever present danger to human health on a worldwide scale, including epidemics such as the West-African Ebola epidemic and the ongoing Zika epidemic in the Americas, as well as ongoing disease spread such as seasonal influenza.
+The rapid evolution of these viruses allows inference of the evolution and epidemiology of the disease from genomic data.
+Such analysis are often done in isolation, and may lack the spatial or temporal context in which to best interpret the results, which impedes understanding \citep{pybus2013evolutionary}.
+Furthermore, the results of analysis are often not made available to the public or health bodies until publication, which may be too late to effect change in policy or understanding.
 We have developed nextstrain to visualise viral outbreaks in as close to real time as possible.
-This platform consists of three components: the collection and updating of available sequences from a range of public and private sources, rapid and automated analysis pipelines and an interactive web-application by which to interrogate the results. 
+This platform consists of three components: the collection and updating of available sequences from a range of public and private sources, rapid and automated analysis pipelines and an interactive web-application by which to interrogate the results.
 
 
-The regularly updated nature and rapidity of these analysis is crucial to the monitoring and understanding of pathogen epidemiology and evolution.  
-Sequencing times and costs are continually dropping, with on-the-ground sequencing being employed during the recent West African Ebola and Zika epidemics \citep{Quick:2016kf,Faria105171}.
+The regularly updated nature and rapidity of these analysis is crucial to the monitoring and understanding of pathogen epidemiology and evolution.
+Sequencing times and costs are continually dropping, with on-the-ground sequencing being employed during the recent West African Ebola and Zika epidemics \citep{quick2016real,faria2017epidemic}.
 This rapidity of sequencing must be complemented with rapid methods by which to analyse and interpret results.
 
 
 Nextstrain consists of three components:
 ``Fauna'' is a collection of python scripts to maintain a database representative of all publicly available sequences and related metadata, sourced from public repositories such as NCBI, gisaid and ViPR, as well as github repositories and other sources of genomic data. ``Augur'' is the bioinformatics pipeline, performing subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait reconstruction across the tree, including inference of the most likely transmission events.
-This leverages the maximum likelihood phylodynamic analysis TreeTime \citep{Sagulenko:2017vm}, allowing a full analysis of the entire Ebola epidemic ($n=000$) in 0 hours. 
+This leverages the maximum likelihood phylodynamic analysis TreeTime \citep{sagulenko2017treetime}, allowing a full analysis of the entire Ebola epidemic ($n=000$) in 0 hours.
 These scripts are designed in a manner to be readily co-opted to different pathogens.
 Analysed data are then immediately available to interrogate through the visualisation software ``Auspice'', available at \href{www.nextstrain.org}{www.nextstrain.org}.
 This approach is similar in concept to Nextflu \citep{neher2015nextflu} however extended and generalised to different viral pathogens.
-There is a growing need for surveillance of non-influenza viruses \citep{FRCPath:2017fg}, and nextstrain is able to be extended to nearly all viral outbreaks with readily accessible genomic data. 
+There is a growing need for surveillance of non-influenza viruses \citep{tang2017global}, and nextstrain is able to be extended to nearly all viral outbreaks with readily accessible genomic data.
 
 \begin{figure}[!tpb]
 \centerline{\includegraphics[width=0.45\textwidth]{figures/nextstrain}}
@@ -82,36 +82,36 @@ Auspice employs linked views into different facets of the data, whereby changes 
 These views allow simultaneous interrogation of phylogenetic and spatial relationships, with additional metadadata such as genotype or serotype expressed through colourings (figure \ref{nextstrain}).
 This is coupled with a user-interactable time slider to see how the pathogen has evolved and spread over the course of the epidemic.
 By animating the temporal dimension, a high level overview of the entire outbreak is quickly gained.
-This approach both conveys the geographical spread of disease and the chaotic nature of epidemics. 
+This approach both conveys the geographical spread of disease and the chaotic nature of epidemics.
 
 
 \subsection*{Transmission Chain Analysis}
-Maximum likelihood ancestral state reconstruction of discrete traits such as country or region of isolation allows identification of probably transmission events given the sampled data, together with a marginal likelihood for each event. 
-Inferred transmissions are displayed as colours on the tree, with opacity used to convey confidence, and each transmission is also drawn on the map. 
+Maximum likelihood ancestral state reconstruction of discrete traits such as country or region of isolation allows identification of probably transmission events given the sampled data, together with a marginal likelihood for each event.
+Inferred transmissions are displayed as colours on the tree, with opacity used to convey confidence, and each transmission is also drawn on the map.
 More?
 
 \subsection*{Monitoring of viral evolution \& adaptation}
 Nextstrain tracks and reconstructs mutations across the tree and displays this information as a bar-chart of entropy at each position in across the genome, as well as showing the mutations inferred to occur on each branch by hovering over the tree.
-As with all views into data, selecting a position in the genome reveals the selected segregating variant in the phylogeny and the map. 
-This allows interrogation of genetic change which may be adaptive or underlying a change in disease dynamics. 
+As with all views into data, selecting a position in the genome reveals the selected segregating variant in the phylogeny and the map.
+This allows interrogation of genetic change which may be adaptive or underlying a change in disease dynamics.
 
 For many pathogens, the emergence and spread of gain-of-function variants is a grave concern.
-China has experienced seasonal epidemics of influenza A/H7N9 over the past five years, however human to human transmission is thought to be rare, with the majority of human cases being spillover from poultry. 
-The threat of mutations which facilitate human to human transmission is of extreme concern, as H7N9 has a mortality rate of around $30\%$ \citep{doi:10.1056/NEJMoa1304617}.
-\textit{In vitro} experiments have identified three amino acid mutations in the hemagglutinin (HA) gene which confer a switch in specificity for human-type receptors by promoting binding to human trachea epithelial cells \citep{deVries:2017dj}. 
-Nextstrain allows monitoring of such mutations, such that interventions and control measures may be implemented where appropriate. 
+China has experienced seasonal epidemics of influenza A/H7N9 over the past five years, however human to human transmission is thought to be rare, with the majority of human cases being spillover from poultry.
+The threat of mutations which facilitate human to human transmission is of extreme concern, as H7N9 has a mortality rate of around $30\%$ \citep{li2014epidemiology}.
+\textit{In vitro} experiments have identified three amino acid mutations in the hemagglutinin (HA) gene which confer a switch in specificity for human-type receptors by promoting binding to human trachea epithelial cells \citep{devries2017three}.
+Nextstrain allows monitoring of such mutations, such that interventions and control measures may be implemented where appropriate.
 
 
 \subsection*{A Model for Public Sharing of Data}
 Nextstrain presents a single overview of both ongoing viral disease (seasonal \& avian influenza, zika) as well as retrospective analysis (dengue, ebola), all based upon the same underlying bioinformatics architecture.
-As such, it is well positioned to respond to both the next outbreak and continued surveillance of current ones. 
+As such, it is well positioned to respond to both the next outbreak and continued surveillance of current ones.
 Analysis of such outbreaks relies on public sharing of data, and nextstrain has the ability to automatically update sequences from a range of public databases and repositories.
-Scientists are justifiably skeptical of losing control of their data, and we try to address these concerns by preventing access to the raw genome sequences, and by clearly indicating the source of each sequence. 
-We do, however provide the ability to download phylogenetic trees, metadata and screenshots, and private metadata can be added by users by simply dragging a CSV file onto the browser. 
+Scientists are justifiably skeptical of losing control of their data, and we try to address these concerns by preventing access to the raw genome sequences, and by clearly indicating the source of each sequence.
+We do, however provide the ability to download phylogenetic trees, metadata and screenshots, and private metadata can be added by users by simply dragging a CSV file onto the browser.
 We believe this strikes a compromise between keeping certain data private and allowing the dissemination of results important to the wider scientific community, and raises the possibility of further collaboration between scientists.
-Genomic epidemiology has the potential to inform the public, health organisations and scientists alike, a potential which is realised by sharing of data in real time rather than retrospectively \citep{Croucher:2015go}.
- 
- 
+Genomic epidemiology has the potential to inform the public, health organisations and scientists alike, a potential which is realised by sharing of data in real time rather than retrospectively \citep{croucher2015application}.
+
+
 \vspace*{-10pt}
 
 \section*{Acknowledgements}
