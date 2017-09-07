@@ -19,11 +19,14 @@ Barney Potter\,$^{\text{\sfb 1}}$,
 Charlton Callender\,$^{\text{\sfb 1}}$,
 Pavel Sagulenko\,$^{\text{\sfb 3}}$,
 Trevor Bedford\,$^{\text{\sfb 1,}\S}$ and
-Richard Neher\,$^{\text{\sfb 3,}\S}$}
+Richard A.~Neher\,$^{\text{\sfb 3,4,5}\S}$
+}
 \address{
 $^{\text{\sf 1}}$Vaccine and Infectious Disease Division, Fred Hutchinson Cancer Research Center, Seattle, WA, USA,
 $^{\text{\sf 2}}$Molecular and Cellular Biology Program, University of Washington, Seattle, WA, USA and
-$^{\text{\sf 3}}$Biozentrum, University of Basel, Basel, Switzerland.
+$^{\text{\sf 3}}$Max Planck Institute for Developmental Biology, T\"ubingen, Germany.
+$^{\text{\sf 4}}$Biozentrum, University of Basel, Basel, Switzerland.
+$^{\text{\sf 5}}$SIB Swiss Institute of Bioinformatics, Basel, Switzerland.
 }
 
 \corresp{$^\ast$To whom correspondence should be addressed. $^\S$These authors contributed equally to this work.}
@@ -40,10 +43,10 @@ Nextstrain is a bioinformatics and visualisation platform which presents a real-
 Nextstrain makes these results, representing our current understanding, publicly available for use by health professionals, epidemiologists, virologists and the public alike.
 \\
 \textbf{Availability and implementation:}
-All code (predominantly Javascript and Python) is freely available from https://github.com/blab/nextstrain and the web-application is available at www.nextstrain.org.
+All code (predominantly Javascript and Python) is freely available from https://github.com/nextstrain and the web-application is available at www.nextstrain.org.
 \\
 \textbf{Contact:}
-\href{jhadfiel@fredhutch.org}{jhadfiel@fredhutch.org}, \href{tbedford@fredhutch.org}{tbedford@fredhutch.org}, \href{richard.neher@tuebingen.mpg.de}{richard.neher@tuebingen.mpg.de}
+\href{jhadfiel@fredhutch.org}{jhadfiel@fredhutch.org}, \href{tbedford@fredhutch.org}{tbedford@fredhutch.org}, \href{richard.neher@unibas.ch}{richard.neher@unibas.ch}
 \\
 }
 
@@ -54,7 +57,7 @@ The rapid evolution of these viruses allows inference of the evolution and epide
 Such analysis are often done in isolation, and may lack the spatial or temporal context in which to best interpret the results, which impedes understanding \citep{pybus2013evolutionary}.
 Furthermore, the results of analysis are often not made available to the public or health bodies until publication, which may be too late to effect change in policy or understanding.
 We have developed nextstrain to visualise viral outbreaks in as close to real time as possible.
-This platform consists of three components: the collection and updating of available sequences from a range of public and private sources, rapid and automated analysis pipelines and an interactive web-application by which to interrogate the results.
+%This platform consists of three components: the collection and updating of available sequences from a range of public and private sources, rapid and automated analysis pipelines and an interactive web-application by which to interrogate the results.
 
 
 The regularly updated nature and rapidity of these analysis is crucial to the monitoring and understanding of pathogen epidemiology and evolution.
@@ -63,16 +66,16 @@ This rapidity of sequencing must be complemented with rapid methods by which to 
 
 
 Nextstrain consists of three components:
-``Fauna'' is a collection of python scripts to maintain a database representative of all publicly available sequences and related metadata, sourced from public repositories such as NCBI, gisaid and ViPR, as well as github repositories and other sources of genomic data. ``Augur'' is the bioinformatics pipeline, performing subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait reconstruction across the tree, including inference of the most likely transmission events.
+``Fauna'' is a collection of python scripts to maintain a database representative of all available sequences and related metadata, sourced from public repositories such as NCBI, gisaid and ViPR, as well as github repositories and other sources of genomic data. ``Augur'' is the bioinformatics pipeline, performing subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait reconstruction across the tree, including inference of the most likely transmission events.
 This leverages the maximum likelihood phylodynamic analysis TreeTime \citep{sagulenko2017treetime}, allowing a full analysis of the entire Ebola epidemic ($n=000$) in 0 hours.
-These scripts are designed in a manner to be readily co-opted to different pathogens.
+These scripts separate generic core functionality from a light virus specific layer such that they are easily co-opted to different pathogens.
 Analysed data are then immediately available to interrogate through the visualisation software ``Auspice'', available at \href{www.nextstrain.org}{www.nextstrain.org}.
 This approach is similar in concept to Nextflu \citep{neher2015nextflu} however extended and generalised to different viral pathogens.
 There is a growing need for surveillance of non-influenza viruses \citep{tang2017global}, and nextstrain is able to be extended to nearly all viral outbreaks with readily accessible genomic data.
 
 \begin{figure}[!tpb]
 \centerline{\includegraphics[width=0.45\textwidth]{figures/nextstrain}}
-\caption{Currnetly known genomic epidemiology of Zika virus (\href{nextstrain.org/zika}{nextstrain.org/zika}). The main interface consists of three linked panels - a phylogenetic tree, the inferred transmissions projected onto a map, and the genetic diversity across the genome.}
+\caption{Currently known genomic epidemiology of Zika virus (\href{nextstrain.org/zika}{nextstrain.org/zika}). The main interface consists of three linked panels - a phylogenetic tree, the inferred transmissions projected onto a map, and the genetic diversity across the genome.}
 \label{nextstrain}
 \end{figure}
 
@@ -122,6 +125,7 @@ We would like to thank...
 \section*{Funding}
 
 This work has been supported by the...
+OpenSciencePrize to TB and RAN, the ERC through StG-260686 to RAN.
 
 \vspace*{-12pt}
 
