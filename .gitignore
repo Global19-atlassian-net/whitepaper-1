@@ -10,3 +10,4 @@ whitepaper.pdf
 *.blg
 *.out
 *.pdfsync
+*.synctex.gz

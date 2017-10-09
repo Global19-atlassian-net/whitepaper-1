@@ -66,7 +66,7 @@ This rapidity of sequencing must be complemented with rapid methods by which to 
 
 
 Nextstrain consists of three components:
-``Fauna'' is a collection of python scripts to maintain a database representative of all available sequences and related metadata, sourced from public repositories such as NCBI, gisaid and ViPR, as well as github repositories and other sources of genomic data. ``Augur'' is the bioinformatics pipeline, performing subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait reconstruction across the tree, including inference of the most likely transmission events.
+``Fauna'' is a collection of python scripts to maintain a database representative of all available sequences and related metadata, sourced from public repositories such as NCBI, GISAID and ViPR, as well as github repositories and other sources of genomic data. ``Augur'' is the bioinformatics pipeline, performing subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait reconstruction across the tree, including inference of the most likely transmission events.
 This leverages the maximum likelihood phylodynamic analysis TreeTime \citep{sagulenko2017treetime}, allowing a full analysis of the entire Ebola epidemic ($n=000$) in 0 hours.
 These scripts separate generic core functionality from a light virus specific layer such that they are easily co-opted to different pathogens.
 Analysed data are then immediately available to interrogate through the visualisation software ``Auspice'', available at \href{www.nextstrain.org}{www.nextstrain.org}.
@@ -85,13 +85,13 @@ Auspice employs linked views into different facets of the data, whereby changes 
 These views allow simultaneous interrogation of phylogenetic and spatial relationships, with additional metadadata such as genotype or serotype expressed through colourings (figure \ref{nextstrain}).
 This is coupled with a user-interactable time slider to see how the pathogen has evolved and spread over the course of the epidemic.
 By animating the temporal dimension, a high level overview of the entire outbreak is quickly gained.
-This approach both conveys the geographical spread of disease and the chaotic nature of epidemics.
+This approach both communicates the geographical spread of disease and the chaotic nature of epidemics.
 
 
 \subsection*{Transmission Chain Analysis}
 Maximum likelihood ancestral state reconstruction of discrete traits such as country or region of isolation allows identification of probably transmission events given the sampled data, together with a marginal likelihood for each event.
-Inferred transmissions are displayed as colours on the tree, with opacity used to convey confidence, and each transmission is also drawn on the map.
-More?
+Inferred transmissions are displayed as colours on the tree and each transmission is also drawn on the map.
+It is important to make known the confidence of any such reconstruction, and we do this in two ways: by matching colour saturation to the confidence of that trait, and by displaying all relevant information when one hovers over the corresponding branch or isolate on the tree. 
 
 \subsection*{Monitoring of viral evolution \& adaptation}
 Nextstrain tracks and reconstructs mutations across the tree and displays this information as a bar-chart of entropy at each position in across the genome, as well as showing the mutations inferred to occur on each branch by hovering over the tree.
@@ -117,15 +117,15 @@ Genomic epidemiology has the potential to inform the public, health organisation
 
 \vspace*{-10pt}
 
-\section*{Acknowledgements}
-We would like to thank...
-
-\vspace*{-12pt}
+% please add acknowledgment if applicable.
+%\section*{Acknowledgements}
+%We would like to thank...
+%
+%\vspace*{-12pt}
 
 \section*{Funding}
 
-This work has been supported by the...
-OpenSciencePrize to TB and RAN, the ERC through StG-260686 to RAN.
+This work has been supported by the OpenSciencePrize to TB and RAN and the ERC through StG-260686 to RAN.
 
 \vspace*{-12pt}
 
