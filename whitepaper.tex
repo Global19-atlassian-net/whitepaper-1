@@ -38,8 +38,9 @@ $^{\text{\sf 5}}$SIB Swiss Institute of Bioinformatics, Basel, Switzerland.
 \abstract{
 \textbf{Summary:}
 Understanding the spread and evolution of viral pathogens is important for effective public health measures and surveillance.
-Genomic epidemiology, aided by the often high rates of viral evolution and ability to rapidly disseminate around the world, improves our understanding of such diseases.
-Nextstrain is a bioinformatics and visualisation platform which presents a real-time view into the evolution and spread of a range of viral pathogens of high human importance.
+%Genomic epidemiology, aided by the often high rates of viral evolution and ability to rapidly disseminate around the world, improves our understanding of such diseases.
+Nextstrain consists of a bioinformatics pipeline for phylodynamics analysis of viral genomes and a to an interactive visualisation platform which presents a real-time view into the evolution and spread of a range of viral pathogens of high human importance.
+The visualization integrates sequence data with other data types such as geographic information, serology, or host species.
 Nextstrain makes these results, representing our current understanding, publicly available for use by health professionals, epidemiologists, virologists and the public alike.
 \\
 \textbf{Availability and implementation:}
@@ -53,7 +54,7 @@ All code (predominantly Javascript and Python) is freely available from https://
 \maketitle
 
 Viral pathogens pose an ongoing and ever present danger to human health on a worldwide scale, including epidemics such as the West-African Ebola epidemic and the ongoing Zika epidemic in the Americas, as well as ongoing disease spread such as seasonal influenza.
-The rapid evolution of these viruses allows inference of the evolution and epidemiology of the disease from genomic data.
+The rapid evolution of these viruses allows inference of history and epidemiology of the disease from genomic data.
 Such analyses are often done in isolation, and may lack the spatial or temporal context in which to best interpret the results, which impedes understanding \citep{pybus2013evolutionary}.
 Furthermore, the results of analyses are often not made available to the public or health bodies until publication, which may be too late to effect change in policy or understanding.
 We have developed nextstrain to visualise viral outbreaks in as close to real time as possible.
@@ -62,7 +63,7 @@ We have developed nextstrain to visualise viral outbreaks in as close to real ti
 
 The regularly updated nature and rapidity of these analyses is crucial to the monitoring and understanding of pathogen epidemiology and evolution.
 Sequencing times and costs are continually dropping, with on-the-ground sequencing being employed during the recent West African Ebola and Zika epidemics \citep{quick2016real,faria2017epidemic}.
-This rapidity of sequencing must be complemented with rapid methods by which to analyse and interpret results.
+This rapidity of sequencing must be complemented with rapid methods by which to analyse, interpret, and diseminate results.
 
 
 Nextstrain consists of three components:
@@ -82,7 +83,7 @@ There is a growing need for surveillance of non-influenza viruses \citep{tang201
 \subsection*{Joint Temporal \& Spatial Visualisation}
 Conveying understanding of pathogen evolution through space and time involves filtering large amounts of data into forms that can be easily reasoned with.
 Auspice employs linked views into different facets of the data, whereby changes in one view are reflected in all others.
-These views allow simultaneous interrogation of phylogenetic and spatial relationships, with additional metadadata such as genotype or serotype expressed through colourings (figure \ref{nextstrain}).
+These views allow simultaneous interrogation of phylogenetic and spatial relationships, with additional data such as genotype or serotype expressed through colourings (figure \ref{nextstrain}).
 This is coupled with a user-interactable time slider to see how the pathogen has evolved and spread over the course of the epidemic.
 By animating the temporal dimension, a high level overview of the entire outbreak is quickly gained.
 This approach both communicates the geographical spread of disease and the stochastic nature of epidemics.
