@@ -53,15 +53,15 @@ All code (predominantly JavaScript and Python) is freely available from \href{ht
 
 \maketitle
 
-Viral pathogens pose an ever-present danger to global human health, with recent events such as the West-African Ebola epidemic and the ongoing Zika epidemic in the Americas highlighting the risk.
+Viral pathogens pose an ever-present danger to global human health, highlighted by recent events such as the West-African Ebola epidemic and the ongoing Zika epidemic in the Americas.
 The rapid evolution of these viruses allows inference of epidemic history from genomic data.
 Such analyses are often done in isolation, and may lack the spatial or temporal context in which to best interpret the results, which impedes understanding \citep{pybus2013evolutionary}.
-Furthermore, the results of analyses are often not made available to the public or health bodies until after publication, which may be too late to effect change in policy or understanding.
+Furthermore, the results of analyses are rarely made available to the public or health bodies until after publication, which may be too late to effect change in policy or understanding.
 We have developed Nextstrain to visualise outbreaks in as close to real time as possible.
 Whilst currently encompassing a selection of viruses, extension to non-viral pathogens is forthcoming.
 
 The regularly updated nature and rapidity of these analyses is crucial to the monitoring and understanding of pathogen epidemiology and evolution.
-Sequencing times and costs are continually dropping, with on-the-ground sequencing used during the recent West African Ebola and Zika epidemics \citep{quick2016real,faria2017epidemic}.
+Sequencing times and costs are continually dropping, with on-the-ground sequencing used during recent epidemics \citep{quick2016real,faria2017epidemic}.
 Rapid methods by which to analyse, interpret, and disseminate results must complement this sepeed of sequencing.
 
 Nextstrain consists of data curation, analysis and visualisation components:
@@ -91,8 +91,8 @@ This approach both communicates the geographical spread of the epidemic alongsid
 Maximum likelihood ancestral state reconstruction of discrete traits such as country or region of isolation allows identification of probable transmission events given the sampled data, together with a marginal likelihood for each event.
 Internal node colours indicate inferred transmissions on the tree, which are also drawn as links between demes on the map.
 It is important to make known the uncertainty of such reconstructions.
-The confidence is conveyed by matching colour saturation to the confidence of that trait, and by displaying all relevant information when one hovers over the corresponding branch or isolate on the tree.
-Despite this, sampling bias can obscure transmission links, and in cases of extreme bias we have chosen not to display the inferred states.
+Confidence is conveyed by matching colour saturation to the confidence of that trait, and by displaying all relevant information when one hovers over the corresponding branch or isolate on the tree.
+Sampling bias can obscure transmission links, and in certain cases we have chosen not to display the inferred states.
 
 \subsection*{Monitoring of evolution and adaptation}
 Nextstrain tracks and reconstructs mutations across the tree and displays this information as a bar-chart of entropy at each position in the genome, as well as showing the mutations inferred to occur on each branch by hovering over the tree.
@@ -101,7 +101,7 @@ This allows interrogation of genetic change which may be adaptive or underlying 
 
 For many pathogens, the emergence and spread of gain-of-function variants is a grave concern.
 For instance, China has experienced seasonal epidemics of influenza A/H7N9 over the past five years.
-Despite no known cases of human to human transmission, the high mortality rate of $~30\%$ \citep{li2014epidemiology} makes the threat of mutations which facilitate human to human transmission of extreme concern (e.g. see \citep{devries2017three}).
+Despite no known cases of human to human transmission, the high mortality rate of $~30\%$ \citep{li2014epidemiology} makes the threat of mutations which facilitate human to human transmission of extreme concern (see \citep{devries2017three}).
 Nextstrain allows monitoring of experimentally determined mutations, informing appropriate interventions and control measures.
 
 \subsection*{A model for public sharing of data}
