@@ -64,9 +64,9 @@ The regularly updated nature and rapidity of these analyses is crucial to the mo
 Sequencing times and costs are continually dropping, with on-the-ground sequencing used during the recent West African Ebola and Zika epidemics \citep{quick2016real,faria2017epidemic}.
 Rapid methods by which to analyse, interpret, and disseminate results must complement this sepeed of sequencing.
 
-Nextstrain consists of three components:
-\textit{Fauna} is a collection of Python scripts to maintain a database representative of all available sequences and related metadata, sourced from public repositories such as NCBI (www.ncbi.nlm.nih.gov), GISAID (www.gisaid.org) and ViPR (www.viprbrc.org), as well as GitHub repositories and other sources of genomic data.
-\textit{Augur} is a suite of tools to perform phylodynamic analysis \citep{voltz2013}, including subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait geographic reconstruction, including inference of the most likely transmission events.
+Nextstrain consists of data curation, analysis and visualisation components:
+Python scripts maintain a database representative of all available sequences and related metadata, sourced from public repositories such as NCBI (www.ncbi.nlm.nih.gov), GISAID (www.gisaid.org) and ViPR (www.viprbrc.org), as well as GitHub repositories and other sources of genomic data.
+A suite of tools perform phylodynamic analysis \citep{voltz2013}, including subsampling, alignment, phylogenetic inference, temporal dating of ancestral nodes and discrete trait geographic reconstruction, including inference of the most likely transmission events.
 This leverages the maximum likelihood analyses implemented in TreeTime \citep{sagulenko2017treetime}, allowing a full analysis of the entire Ebola epidemic ($n$=1581 genomes) in under 2 hours on a modern laptop.
 These scripts separate generic core functionality from a light pathogen-specific layer such that they are easily co-opted to different pathogens.
 Visualisation of these analysis is available through \href{http://nextstrain.org}{nextstrain.org}.
