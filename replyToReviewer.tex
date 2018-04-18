@@ -1,54 +1,108 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[utf8]{inputenc}
+\documentclass[11pt,oneside,letterpaper]{article}
+
+% graphicx package, useful for including eps and pdf graphics
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% basic packages
+\usepackage{color}
+\usepackage{parskip}
+\usepackage{float}
+\usepackage{hyperref}
+
+% text layout
+\usepackage{geometry}
+\geometry{textwidth=16.25cm} % 15.25cm for single-space, 16.25cm for double-space
+\geometry{textheight=22cm} % 22cm for single-space, 22.5cm for double-space
+
+% helps to keep figures from being orphaned on a page by themselves
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+
+% bold the 'Figure #' in the caption and separate it with a period
+% Captions will be left justified
+\usepackage[labelfont=bf,labelsep=period,font=small]{caption}
+
+% review layout with double-spacing
+%\usepackage{setspace}
+%\doublespacing
+%\captionsetup{labelfont=bf,labelsep=period,font=doublespacing}
+
+% cite package, to clean up citations in the main text. Do not remove.
+\usepackage{cite}
+%\renewcommand\citeleft{(}
+%\renewcommand\citeright{)}
+%\renewcommand\citeform[1]{\textsl{#1}}
+
+% Remove brackets from numbering in list of References
+\renewcommand\refname{\large References}
+\makeatletter
+\renewcommand{\@biblabel}[1]{\quad#1.}
+\makeatother
+
+\usepackage{authblk}
+\renewcommand\Authands{ \& }
+\renewcommand\Authfont{\normalsize \bf}
+\renewcommand\Affilfont{\small \normalfont}
+\makeatletter
+\renewcommand\AB@affilsepx{, \protect\Affilfont}
+\makeatother
+
+% notation
 \usepackage{amsmath}
-\usepackage{amsfonts}
 \usepackage{amssymb}
+
 \begin{document}
+
+\newgeometry{top=4cm}
+
+Dear Bioinformatics editorial board,
+
+Thank you for conducting a review of our manuscript entitled ``Nextstrain: real-time tracking of pathogen evolution''.  We have responded to the reviewer criticisms and believe the manuscript is now suitable for publication in Bioinformatics.
+
+Point-by-point responses follow, as well as a PDF showing revisions that have been made since the last submission.
+
+Sincerely,\\
+James Hadfield
+
+\restoregeometry
+
+\newpage
+
+\section*{Reviewer responses}
+
+Original reviewer criticisms are in plain text.  Our responses follow in \textbf{bold}.
 
 We thank the reviewer for their kind words, and have addressed all of the points (detailed below).
 
-\begin{quote}
-1. Page 1, Line 39: ``ongoing and ever-present" is somewhat redundant; I'd just go with ``ever-present"
+1. Page 1, Line 39: ``ongoing and ever-present'' is somewhat redundant; I'd just go with ``ever-present''
 
-2. Page 1, Line 40: perhaps change ``recent epidemics" to ``recent events" so ``epidemics" isn't repeated 3x in the sentence.
-\end{quote}
-We have changed the wording of the manuscript to address these points.
+2. Page 1, Line 40: perhaps change ``recent epidemics'' to ``recent events'' so ``epidemics'' isn't repeated 3x in the sentence.
 
-\begin{quote}
+\textbf{We have changed the wording of the manuscript to address these points.}
+
 3. Page 1, Line 42: it might be helpful to point the reader to a general reference on phylodynamics, assuming the reference limit hasn't already been reached.
-\end{quote}
-We have reworded this section to include a reference to ``Viral Phylodynamics'', Voltz \textit{et al.} 2013.
 
-\begin{quote}
+\textbf{We have reworded this section to include a reference to ``Viral Phylodynamics'', Voltz \textit{et al.} 2013.}
+
 4. Page 1, Line 43 (column 2): could references to the three databases (papers or URLs) be included here?
-\end{quote}
-We have added URLs to the text.
 
-\begin{quote}
-5. Page 2, Line 35: if it can be explained in a very short sentence, it might be interesting to mention the caveat of ``nearly all outbreaks" - which ones aren't amenable to Nextstrain-ification?
-\end{quote}
-There are indeed pathogens for which the general approach outlined in this paper is insufficient, and so we have changed the text to read ``Nextstrain is able to be extended to most outbreaks with readily accessible genomic data, although we note the potential for recombination or low mutation rate to confound phylogenetic signal.''
+\textbf{We have added URLs to the text.}
 
+5. Page 2, Line 35: if it can be explained in a very short sentence, it might be interesting to mention the caveat of ``nearly all outbreaks'' -- which ones aren't amenable to Nextstrain-ification?
 
-\begin{quote}
+\textbf{There are indeed pathogens for which the general approach outlined in this paper is insufficient, and so we have changed the text to read ``Nextstrain is able to be extended to most outbreaks with readily accessible genomic data, although we note the potential for recombination or low mutation rate to confound phylogenetic signal.''}
+
 6. Page 2, Line 51: it should be noted that the transmission inference depends on how well the outbreak in question was sampled - if data is missing, important transmission links could be missed.
-\end{quote}
-This is a very important point, and we have added the following sentence to the manuscript: ``It is important to note that sampling bias can obscure transmission links, and in certain cases we have chosen not to display the inferred states due to this bias.''
 
-\begin{quote}
+\textbf{This is a very important point, and we have added the following sentence to the manuscript: ``It is important to note that sampling bias can obscure transmission links, and in certain cases we have chosen not to display the inferred states due to this bias.''}
+
 7. Page 2, Line 20 (column 20): is there an example of one of these mutations that could be mentioned here?
-\end{quote}
-We have added a reference to the 2017 publication ``Three mutations switch H7N9 influenza to human-type receptor specificity'' (de Vries \textit{et al.}), however have not listed these mutations as we detect none in the (consensus) sequences shown on nextstrain.org
 
-\begin{quote}
-There is a fair amount of passive voice in the manuscript - popping the text into readable.io to find these instances and changing the construction to make them active will make the writing a little more lively (and it usually frees up some words in the word count).
-\end{quote}
-Thankyou for alerting me us to this website. We have removed 11/12 usages of the passive voice, as well as simplifying sentences with too many syllables where possible.
+\textbf{We have added a reference to the 2017 publication ``Three mutations switch H7N9 influenza to human-type receptor specificity'' (de Vries \textit{et al.}), however have not listed these mutations as we detect none in the (consensus) sequences shown on nextstrain.org}
 
-\paragraph{}
-Sincerely,
+There is a fair amount of passive voice in the manuscript -- popping the text into readable.io to find these instances and changing the construction to make them active will make the writing a little more lively (and it usually frees up some words in the word count).
 
-James Hadfield
-
+\textbf{Thank you for alerting us to this website. We have removed 11/12 usages of the passive voice, as well as simplifying sentences with too many syllables where possible.}
 
 \end{document}
